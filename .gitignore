@@ -1,0 +1,26 @@
+# Node modules
+node_modules/
+
+# Build output
+dist/
+*.tsbuildinfo
+
+# Logs
+logs/
+*.log
+
+# Environment variables
+.env
+.env.*
+
+# IDE/editor configs
+.vscode/
+.idea/
+*.swp
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Biome cache (caso exista)
+.biome/
