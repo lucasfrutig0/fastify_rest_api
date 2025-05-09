@@ -5,7 +5,7 @@
 	"type": "module",
 	"scripts": {
 		"build": "tsc",
-		"dev": "tsx src/app.ts",
+		"dev": "tsx watch src/app.ts",
 		"start": "node dist/app.js",
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"check": "biome check --write",
