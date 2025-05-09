@@ -47,4 +47,4 @@ jobs:
       run: pnpm exec biome check ./src
       
     - name: Build
-      run: pnpm run build --if-present
+      run: pnpm run build
