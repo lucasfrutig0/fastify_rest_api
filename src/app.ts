@@ -3,7 +3,7 @@ import Fastify, {
 	type RouteShorthandOptions,
 } from "fastify";
 
-const server: FastifyInstance = Fastify({});
+const app: FastifyInstance = Fastify({});
 
 const opts: RouteShorthandOptions = {
 	schema: {
@@ -20,18 +20,18 @@ const opts: RouteShorthandOptions = {
 	},
 };
 
-server.get("/ping", opts, async (request, reply) => {
+app.get("/ping", opts, async (request, reply) => {
 	return { pong: "it worked!" };
 });
 
 const start = async () => {
 	try {
-		await server.listen({ port: 3000 });
+		await app.listen({ port: 3000 });
 
-		const address = server.server.address();
+		const address = app.server.address();
 		const port = typeof address === "string" ? address : address?.port;
 	} catch (err) {
-		server.log.error(err);
+		app.log.error(err);
 		process.exit(1);
 	}
 };
