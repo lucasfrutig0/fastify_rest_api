@@ -1,10 +1,10 @@
+import cors from "@fastify/cors";
 import Fastify, {
 	type FastifyInstance,
 	type FastifyReply,
 	type FastifyRequest,
 	type RouteShorthandOptions,
 } from "fastify";
-import cors from "@fastify/cors";
 
 import {
 	type ZodTypeProvider,
@@ -12,8 +12,8 @@ import {
 	validatorCompiler,
 } from "fastify-type-provider-zod";
 
-import ScalarApiReference from "@scalar/fastify-api-reference";
 import fastifySwagger from "@fastify/swagger";
+import ScalarApiReference from "@scalar/fastify-api-reference";
 import { routes } from "./routes.js";
 
 const app: FastifyInstance = Fastify({
