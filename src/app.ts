@@ -3,9 +3,9 @@ import Fastify, {
 	type RouteShorthandOptions,
 } from "fastify";
 import {
-	validatorCompiler,
-	serializerCompiler,
 	type ZodTypeProvider,
+	serializerCompiler,
+	validatorCompiler,
 } from "fastify-type-provider-zod";
 
 const app: FastifyInstance = Fastify({}).withTypeProvider<ZodTypeProvider>();
