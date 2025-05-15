@@ -2,8 +2,20 @@ import Fastify, {
 	type FastifyInstance,
 	type RouteShorthandOptions,
 } from "fastify";
+import {
+	validatorCompiler,
+	serializerCompiler,
+	type ZodTypeProvider,
+} from "fastify-type-provider-zod";
 
-const app: FastifyInstance = Fastify({});
+const app: FastifyInstance = Fastify({}).withTypeProvider<ZodTypeProvider>();
+
+app.setValidatorCompiler(validatorCompiler);
+app.setSerializerCompiler(serializerCompiler);
+
+app.register(require("@fastify/cors"), {
+	origin: "*",
+});
 
 const opts: RouteShorthandOptions = {
 	schema: {
